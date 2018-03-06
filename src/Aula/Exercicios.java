@@ -20,7 +20,7 @@ public static void main(String args []){
 	
     //Exercicio 10
     int numero1 = 1;
-    double Multi = numero1 + numero1 + numero1 + numero1 + numero1 + numero1 + numero1 + numero1;
+    double Multi = 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1;
     System.out.println("O resultado é: " + Multi); 
 	
     //Exercicio 11
