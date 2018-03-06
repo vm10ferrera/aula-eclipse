@@ -21,7 +21,17 @@ public static void main(String args []){
     //Exercicio 10
     int numero1 = 1;
     double Multi = numero1 + numero1 + numero1 + numero1 + numero1 + numero1 + numero1 + numero1;
-    System.out.println("O resultado é: " + Multi);    
+    System.out.println("O resultado é: " + Multi); 
+	
+    //Exercicio 11
+	    int M = 101;
+	    if ( M < 14) {
+	    System.out.println("O valor da variavel é menor que 14 e 100.");	    	    
+	    }
+	    else if ( M > 100) {
+	    System.out.println("O valor da variavel é maior que 14 e 100.");	
+	    }
+	    
 
    
     
