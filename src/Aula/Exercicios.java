@@ -19,9 +19,9 @@ public static void main(String args []){
     System.out.println("O resultado é: " + resultado);
 	
     //Exercicio 10
-	    int numero1 = 1;
-	    double Multi = numero1 + numero1 + numero1 + numero1 + numero1 + numero1 + numero1 + numero1;
-	    System.out.println("O resultado é: " + Multi);    
+    int numero1 = 1;
+    double Multi = numero1 + numero1 + numero1 + numero1 + numero1 + numero1 + numero1 + numero1;
+    System.out.println("O resultado é: " + Multi);    
 
    
     
