@@ -19,8 +19,8 @@ public static void main(String args []){
     System.out.println("O resultado é: " + resultado);
 	
     //Exercicio 10
-    int numero1 = 1;
-    double Multi = 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1;
+    int n1 = 1;
+    double Multi = n1 + n1 + n1 + n1 + n1 + n1 + n1 + n1;
     System.out.println("O resultado é: " + Multi); 
 	
     //Exercicio 11
@@ -48,6 +48,21 @@ public static void main(String args []){
     double beta=1.5;
     f=(int) (alfa*beta);
     System.out.println(alfa+" X "+beta+" = "+f);
+    
+    //Exercicio 15
+    //?
+		
+    //Exercicio 16
+    double ladoA = 4, ladoB = 6;
+    double Área = ladoA * ladoB;
+    System.out.println("Lado A = "+ladoA+"\nLado B = "+ladoB+"\nA Área é = "+Área);
+		
+    //Exercicio 17
+    if(ladoA == ladoB)
+    System.out.println("\nA figura é um quadrado");
+    else
+    System.out.println("\nA figura é um retângulo");
+
 	    
 
    
