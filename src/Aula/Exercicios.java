@@ -62,6 +62,18 @@ public static void main(String args []){
     System.out.println("\nA figura é um quadrado");
     else
     System.out.println("\nA figura é um retângulo");
+	
+    //Exercicio 18
+    int a=25,b=50,rtd=0;
+    rtd = a-(-b);
+    System.out.println("O resultado: "+resultado);		
+			
+    //Exercicio 19
+    System.out.println( a == 10 ? "A variavel'A' é igual a 10." : a>10? "A variavel 'A' é maior que 10." : "A variavel 'A' é menor que 10.");
+		
+    //Exercicio 20
+    int RFINAL = r + resto + numero + numero1 + M + alfa + f + a + b + rtd;
+    System.out.println("A soma dos valores é = "+RFINAL); 
 
 	    
 
