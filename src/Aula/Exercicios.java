@@ -24,13 +24,30 @@ public static void main(String args []){
     System.out.println("O resultado é: " + Multi); 
 	
     //Exercicio 11
-	    int M = 101;
-	    if ( M < 14) {
-	    System.out.println("O valor da variavel é menor que 14 e 100.");	    	    
-	    }
-	    else if ( M > 100) {
-	    System.out.println("O valor da variavel é maior que 14 e 100.");	
-	    }
+    int M = 101;
+    if ( M < 14) {
+    System.out.println("O valor da variavel é menor que 14 e 100.");	    	    
+    }
+    else if ( M > 100) {
+    System.out.println("O valor da variavel é maior que 14 e 100.");	
+    }
+     
+    //Exercicio 12
+    double pf = 4.75;
+    if(pf >=1.99 && pf <=5.99)
+    System.out.println(" O valor do número está entre 1.99 e 5.99");
+    else
+    System.out.println(" O valor do número não está entre 1.99 e 5.99");
+			
+    //Exercicio 13
+    if(M == pf) System.out.println("Os valores são iguais.");
+    else System.out.println("Os valores são diferentes");
+			
+    //Exercicio 14
+    int alfa=5, f = 0; 
+    double beta=1.5;
+    f=(int) (alfa*beta);
+    System.out.println(alfa+" X "+beta+" = "+f);
 	    
 
    
