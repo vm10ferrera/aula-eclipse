@@ -50,7 +50,20 @@ public static void main(String args []){
     System.out.println(alfa+" X "+beta+" = "+f);
     
     //Exercicio 15
-    //?
+    ArrayList Nomes = new ArrayList();
+    Scanner s1 = new Scanner(System.in);
+    System.out.println("Digite o primeiro nome: ");
+    String nome1 = s1.nextLine();
+    Scanner s2 = new Scanner(System.in);
+    System.out.println("Digite o segundo nome: ");
+    String nome2 = s2.nextLine();
+    if(nome1.equals("") || nome2.equals("")){ 
+    System.out.println("ERRO");
+    }
+    Nomes.add(nome1);
+    Nomes.add(nome2);
+    Collections.sort(Nomes);
+    System.out.println(Nomes);
 		
     //Exercicio 16
     double ladoA = 4, ladoB = 6;
