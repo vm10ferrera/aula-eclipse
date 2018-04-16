@@ -33,17 +33,12 @@ public class Calculos {
     }
 	
 	public double subPorcent(double n0, double n1) {
-    	double resultado = n0 - (n0 * n1) / 100;
+    	double resultado = n0 - ((n0 * n1) / 100);
     	return resultado;
     }
 	
 	public double adiPorcent(double n0, double n1) {
-    	double resultado = n0 + (n0 * n1) / 100;
-    	return resultado;
-    }
-	
-	public double porcent(double n0, double n1) {
-    	double resultado = n0 * n1 / 100;
+    	double resultado = n0 + ((n0 * n1) / 100);
     	return resultado;
     }
 	
