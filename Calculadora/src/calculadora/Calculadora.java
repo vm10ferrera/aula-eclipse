@@ -23,7 +23,7 @@ public class Calculadora extends JFrame {
 	JButton btnMmais = new JButton("M+");
 	JButton btnMmenos = new JButton("M-");
 	
-	JButton btnSetaEs = new JButton("<--");
+	JButton btnStEs = new JButton("<--");
 	JButton btnCE = new JButton("CE");
 	JButton btnC = new JButton("C");
 	JButton btnMaisMenos = new JButton("+-");
@@ -52,11 +52,9 @@ public class Calculadora extends JFrame {
 	JButton btnMais = new JButton("+");
 
 	Calculos mat = new Calculos();
-	String sinal = null, sinal0 = null ,virgula = null;;
+	String sinal = null, sinal0 = null, virgula = null;
 	double valor0 = 0, valor1 = 0, valorM = 0;
 	String str, str0;
-
-	private static Calculadora calc;
 	
 	public Calculadora() {
 		super("Calculadora");
@@ -107,6 +105,7 @@ public class Calculadora extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				valor0 = Double.parseDouble(tela.getText());
 				sinal = "mmais";
+				virgula = null;
 			}
 		});
 		
@@ -117,13 +116,14 @@ public class Calculadora extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				valor0 = Double.parseDouble(tela.getText());
 				sinal = "mmenos";
+				virgula = null;
 			}
 		});
 		
-		btnSetaEs.setBounds(10, 100, 30, 25);
-		btnSetaEs.setMargin(new Insets(1,1,1,1));
-		paine.add(btnSetaEs);
-		btnSetaEs.addActionListener(new ActionListener() {
+		btnStEs.setBounds(10, 100, 30, 25);
+		btnStEs.setMargin(new Insets(1,1,1,1));
+		paine.add(btnStEs);
+		btnStEs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				str = tela.getText();
 				str0 = str.substring(0, str.length() - 1);
@@ -143,7 +143,11 @@ public class Calculadora extends JFrame {
 		paine.add(btnC);
 		btnC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				sinal = null;
+				sinal0 = null;
+				virgula = null;
 				valor0 = 0;
+				valor1 = 0;
 				tela.setText("0");
 			}
 		});
@@ -154,7 +158,6 @@ public class Calculadora extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				valor0 = Double.parseDouble(tela.getText()) * -1;
 				tela.setText(valor0 + "");
-				virgula = null;
 			}
 		});
 		btnRQ.setBounds(150, 100, 30, 25);
@@ -164,6 +167,7 @@ public class Calculadora extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				valor0 = Double.parseDouble(tela.getText());
 				tela.setText(mat.rQ(valor0) + "");
+				virgula = null;
 			}
 		});
 		
@@ -211,9 +215,10 @@ public class Calculadora extends JFrame {
 		paine.add(btnDivi);
 		btnDivi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				virgula = null;
+				sinal0 = "0";
 				valor0 = Double.parseDouble(tela.getText());
-				sinal = "divisão";
-				sinal0 = "xbl";
+				sinal = "divisÃ£o";
 				tela.setText("0");
 			}
 		});
@@ -271,11 +276,11 @@ public class Calculadora extends JFrame {
 		paine.add(btnMulti);
 		btnMulti.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				valor0 = Double.parseDouble(tela.getText());
-				sinal = "multiplicação";
-				sinal0 = "xbl";
-				tela.setText("0");
 				virgula = null;
+				sinal0 = "0";
+				valor0 = Double.parseDouble(tela.getText());
+				sinal = "multiplicaÃ§Ã£o";
+				tela.setText("0");
 			}
 		});
 		btn1barrax.setBounds(150, 160, 30, 25);
@@ -284,7 +289,7 @@ public class Calculadora extends JFrame {
 		btn1barrax.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				valor0 = Double.parseDouble(tela.getText());
-				tela.setText(mat.reciproco(valor0)+ "");
+				tela.setText(mat.reciproco(valor0) + "");
 				virgula = null;
 			}
 		});
@@ -333,11 +338,12 @@ public class Calculadora extends JFrame {
 		paine.add(btnMenos);
 		btnMenos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				valor0 = Double.parseDouble(tela.getText());
-				sinal = "subtração";
-				sinal0 = "xbl";
-				tela.setText("0");
 				virgula = null;
+				sinal0 = "0";
+				valor0 = Double.parseDouble(tela.getText());
+				sinal = "subtraÃ§Ã£o";
+				tela.setText("0");
+				
 			}
 		});
 		btnIgual.setBounds(150, 190, 30, 55);
@@ -347,37 +353,38 @@ public class Calculadora extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				valor1 = Double.parseDouble(tela.getText());
 				
-				if (sinal.equals("divisão")) {
+				if (sinal.equals("divisÃ£o")) {
 					tela.setText(mat.divi(valor0, valor1) + "");
 				}
 				
-				else if (sinal.equals("multiplicação") && sinal0.equals("xbl")) {
+				else if (sinal.equals("multiplicaÃ§Ã£o")) {
 					tela.setText(mat.multi(valor0, valor1) + "");
 				}
 				
-				else if (sinal.equals("subtração") && sinal0.equals("xbl")) {
+				else if (sinal.equals("subtraÃ§Ã£o")) {
 					tela.setText(mat.sub(valor0, valor1) + "");
 				}
 				
-				else if (sinal.equals("adição") && sinal0.equals("xbl")) {
+				else if (sinal.equals("adiÃ§Ã£o") && sinal0.equals("0")) {
 					tela.setText(mat.adi(valor0, valor1) + "");
 				}
 				
-				else if (sinal.equals("divisão") && sinal0.equals("porcentagem")) {
-					tela.setText(mat.porcent(valor0, valor1) + "");
+				else if (sinal.equals("divisÃ£o") && sinal0.equals("porcentagem")) {
+					tela.setText(mat.diviPorcent(valor0, valor1) + "");
 				}
 				
-				else if (sinal.equals("multiplicação") && sinal0.equals("porcentagem")) {
-					tela.setText(mat.porcent(valor0, valor1) + "");
+				else if (sinal.equals("multiplicaÃ§Ã£o") && sinal0.equals("porcentagem")) {
+					tela.setText(mat.multiPorcent(valor0, valor1) + "");
 				}
 				
-				else if (sinal.equals("subtração") && sinal0.equals("porcentagem")) {
-					tela.setText(mat.porcent(valor0, valor1) + "");
+				else if (sinal.equals("subtraÃ§Ã£o") && sinal0.equals("porcentagem")) {
+					tela.setText(mat.subPorcent(valor0, valor1) + "");
 				}
 				
-				else if (sinal.equals("adição") && sinal0.equals("porcentagem")) {
-					tela.setText(mat.porcent(valor0, valor1) + "");
-				}	
+				else if (sinal.equals("adiÃ§Ã£o") && sinal0.equals("porcentagem")) {
+					tela.setText(mat.adiPorcent(valor0, valor1) + "");
+				}
+				virgula = null;
 			}
 		});
 		
@@ -405,20 +412,18 @@ public class Calculadora extends JFrame {
 				else
 					tela.setText(tela.getText() + ".");
 				virgula = "virgula";
-				virgula = null;
 			}
 		});
-		
 		btnMais.setBounds(115, 220, 30, 25);
 		btnMais.setMargin(new Insets(1,1,1,1));
 		paine.add(btnMais);
 		btnMais.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				valor0 = Double.parseDouble(tela.getText());
-				sinal = "adição";
-				sinal0 = "xbl";
-				tela.setText("0");
 				virgula = null;
+				sinal0 = "0";
+				valor0 = Double.parseDouble(tela.getText());
+				sinal = "adiÃ§Ã£o";
+				tela.setText("0");
 			}
 		});
 		
@@ -429,6 +434,6 @@ public class Calculadora extends JFrame {
 	}
 	
 	public static void main(String args[]) {
-		calc = new Calculadora();
+		Calculadora calc = new Calculadora();
 	}
 }
